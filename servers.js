@@ -1,15 +1,12 @@
 const express =require('express');
+const app=express()
+const Port=process.env.PORT || 8000;
 const server =express();
-const helmet=require('helmet');
-const compression = require('compression');
-const morgan=require('morgan');
-const config=require('./Config/config');
-
-
+const multer=require('multer')
 // Middleware
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
-server.use(express.static(__dirname+config.staticFolderPath,{maxAge: 3000}));
+server.use('/puclic/',express.static(__dirname+'Public'));
 server.use(require('helmet')(config.helmetOptions));
 if(config.compressionEnabled){
     server.use(require('compression')());
@@ -20,6 +17,7 @@ server.use(require('morgan')(config.morganFormat))
 server.set('view engine',config.viewEngine)
 //
 const blogRoutes=require('./Routes/blog');
+const multer = require('multer');
 server.use('/', blogRoutes);
 
 //not found

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ALL Blogs</h1>
+    <% blogs.forEach(blog => { %>
+        <div id="<%= blog.id %>">
+            <h3>Blog title: <%= blog.title %></h3>
+            <h3>Blog descriptions: <%= blog.descriptions %></h3>
+            <h3>Blog author: <%= blog.author %></h3>
+        </div>
+    <% }); %>
+</body>
+</html>

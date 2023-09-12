@@ -1,5 +1,5 @@
 exports.sendSuccessResponse = (res, statusCode, Successmessage) => {
-   return res.status(statusCode).send(success, message).end();
+   return res.status(statusCode).send(successmessage).end();
 
   };
   
