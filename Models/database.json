@@ -1,4 +1,26 @@
 {
-  "blogs": [],
+  "blogs": [
+    {
+      "title_blog": "dmeldepoi",
+      "description_blog": "deoidorif",
+      "author_blog": "odieoifr",
+      "image_blog": "1694526640566-Photo-Camera-Download-PNG.png",
+      "id": 1
+    },
+    {
+      "title_blog": "sanaeoujhain",
+      "description_blog": "eoiudrf",
+      "author_blog": "derpoifro",
+      "image_blog": "1694526718812-Photo-Camera-Download-PNG.png",
+      "id": 2
+    },
+    {
+      "title_blog": "smldm",
+      "description_blog": "dmldem",
+      "author_blog": "dmelde",
+      "image_blog": "1694527106187-Photo-Camera-Download-PNG.png",
+      "id": 3
+    }
+  ],
   "users": []
 }
