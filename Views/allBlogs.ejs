@@ -6,13 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ALL Blogs</h1>
-    <% blogs.forEach(blog => { %>
-        <div id="<%= blog.id %>">
-            <h3>Blog title: <%= blog.title %></h3>
-            <h3>Blog descriptions: <%= blog.descriptions %></h3>
-            <h3>Blog author: <%= blog.author %></h3>
+    <h1>All Blogs</h1>
+    <% blogs.forEach(b => { %>
+        <div id="<%= b.id %>">
+            <h3>blog title: <%= b.title_blog %> </h3>
+            <h3>blog description: <%= b.description_blog %> </h3>
+            <h3>blog author: <%= b.author_blog %> </h3>
+            <img width="300px" height="auto" src="/uploads/<%=b.image_blog%>" alt="hh">
         </div>
-    <% }); %>
+    <% }) %>
+
+
 </body>
 </html>
