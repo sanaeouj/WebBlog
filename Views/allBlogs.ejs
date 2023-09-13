@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/styleAll.css">
 
     <title>Document</title>
 </head>
@@ -11,10 +11,12 @@
     <h1>All Blogs</h1>
     <% blogs.forEach(b => { %>
         <div id="<%= b.id %>">
-            <h3>blog title: <%= b.title_blog %> </h3>
-            <h3>blog description: <%= b.description_blog %> </h3>
-            <h3>blog author: <%= b.author_blog %> </h3>
-            <img width="300px" height="auto" src="/uploads/<%=b.image_blog%>" alt="hh">
+            <h3>Title: <%= b.title_blog %> </h3>
+            <h3>Description: <%= b.description_blog %> </h3>
+            <h3>Author: <%= b.author_blog %> </h3> 
+            <img width="300px" height="auto" src="/uploads/<%=b.image_blog%>" alt="hh"><br><br>
+            <button id="Delete">Delete</button> 
+            <button id="Update">Update</button>
         </div>
     <% }) %>
 

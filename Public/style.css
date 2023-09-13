@@ -67,3 +67,21 @@ br {
     height: 0;
     clear: both;
 }
+div{
+    background-color: #555;
+    border: #161313;
+}
+h1 {
+    font-size: 24px;
+    color: #910b0b;
+}
+
+h3 {
+    font-size: 18px;
+    color: #161313;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
