@@ -2,7 +2,7 @@ const express = require ('express');
 const app = express();
 const PORT = process.env.PORT || 7000
 const axios = require ('axios')
-const {createBlog, getBlogs} = require ('./controllers/blog')
+const {createBlog, getBlogs} = require ('./Controllers/Blog')
 const multer = require('multer')
 
 // Set up Multer for image uploads
@@ -24,9 +24,18 @@ app.use(express.static('Public'))
 app.get('/addBlog',(req,res) => {
     res.render('addBlog')
 })
+//login
+app.get('/login',(req,res) => {
+  res.render('login.ejs')
+})
+//registre 
+app.get('/registre',(req,res) => {
+  res.render('registre.ejs')
+})
+
 app.post('/createblog',upload.single('avatar'), createBlog)
 app.get('/allBlogs', getBlogs)  
-//render is only for pages in 'views' folder
+
 app.use((req,res,next) => {
     res.sendFile(__dirname + '/Public/404.html')
 });

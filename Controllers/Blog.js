@@ -29,3 +29,14 @@ exports.getBlogs = async (req,res) => {
     res.render('allBlogs',{blogs})
     res.end()
 }
+// router.post('/update-blog/:id', (req, res) => {
+//     const blogId = req.params.id;
+//     const updatedBlogData = req.body; 
+//     res.redirect('/allblogs');
+// });
+
+// router.get('/delete-blog/:id', (req, res) => {
+//     const blogId = req.params.id;
+ 
+//     res.redirect('/allblogs');
+// });
