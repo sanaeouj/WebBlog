@@ -10,37 +10,36 @@
 	<link rel="stylesheet" href="./css/main.css">
 
 	<script type="text/javascript">
-		$(document).ready(() => {
+		 document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("form2").addEventListener("submit", (event) => {
+            event.preventDefault();
 
-			$("#form2").submit((event) => {
+            // Serialize form data manually
+            const formData = new FormData(document.getElementById("form2"));
 
-				event.preventDefault();
+            fetch('/forgetpass', {
+                method: 'POST',
+                body: formData,
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle the response data
+                $('#form2')[0].reset();
+                document.getElementById("check").innerHTML = data.Success;
 
-				$.ajax({
-					type: 'POST',
-					url: '/forgetpass',
-					data: $('#form2').serialize(),
-					dataType: "json",
-					success: (response) => {
-						//alert("a");
-						//console.log(response.Success);
-						$('#form2')[0].reset();
-						//alert("abc");
-						document.getElementById("check").innerHTML = response.Success;
+                setTimeout(() => {
+                    document.getElementById("check").innerHTML = "";
+                }, 3000);
 
-						setTimeout(() => {
-							document.getElementById("check").innerHTML = "";
-						}, 3000);
-						if (response.Success == "Password changed!") {
-							document.getElementById("aa").click();
-						};
-					},
-					error: () => {
-					}
-				})
-			});
-
-		});
+                if (data.Success === "Password changed!") {
+                    document.getElementById("aa").click();
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        });
+    });
 	</script>
 </head>
 
@@ -69,5 +68,6 @@
 	</div>
 
 </body>
+
 
 </html>
