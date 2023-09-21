@@ -4,18 +4,25 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh; /* Make the body take up the full viewport height */
-    background-color: #e6e6fa; /* Pink-violet background color */
+    background-color: #06062e; /* Pink-violet background color */
     width: 70%;
 
 }
 
 /* Style the blog container */
-div {
+.Conteneur {
     text-align: center; /* Center text inside the div */
     padding: 20px;
     background-color: #fff; /* White background color for the div */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    height: 450px;
+    margin: 50px;
+}
+.boutton{
+    text-align: center; /* Center text inside the div */
+    background-color: #fff; /* White background color for the div */
+    margin: 50px;
 }
 
 /* Style the blog title */

@@ -2,7 +2,7 @@ const express = require ('express');
 const app = express();
 const PORT = process.env.PORT || 8000
 const axios = require ('axios')
-const {createBlog, getBlogs} = require ('./Controllers/Blog')
+const {createBlog, getBlogs,deleteBlog,editBlog,updateBlog} = require ('./Controllers/Blog')
 const multer = require('multer')
 const users = require('./Models/database.json')
 
@@ -28,6 +28,7 @@ app.set('view engine','ejs');
 app.use(express.static('Public'))
 
 
+
 app.get('/login',(req,res)=>{
   res.render('login')
 })
@@ -42,14 +43,18 @@ app.post('/createBlog',upload.single('avatar'), createBlog)
 
 app.use('/allBlogs', getBlogs)
 
+app.delete('/delete/:id',deleteBlog)
+app.get('/edit/:id',editBlog)
+
+
 
   
 
 //render is only for pages in 'views' folder
 
-app.use((req,res,next) => {
-    res.sendFile(__dirname + '/Public/html/404.html')
-});
+// app.use((req,res,next) => {
+//     res.sendFile(__dirname + '/Public/html/404.html')
+// });
       
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
